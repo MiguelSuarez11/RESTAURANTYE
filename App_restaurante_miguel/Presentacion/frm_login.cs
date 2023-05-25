@@ -28,7 +28,7 @@ namespace Presentacion
                 cls_login obj_login = new cls_login(user, password);
                 if (obj_login.getRol() == "Administrador")
                 {
-                    frm_administrador obj_admin = new frm_administrador();
+                    FormPrincipal obj_admin = new FormPrincipal();
                     this.Hide();
                     obj_admin.Visible = true;
                     obj_login.getNombre();

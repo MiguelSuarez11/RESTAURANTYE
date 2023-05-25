@@ -183,7 +183,6 @@ C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion
 C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion.frm_cajero.resources
 C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion.frm_platos.resources
 C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion.frm_clientes.resources
-C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion.frm_administrador.resources
 C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion.frm_personal.resources
 C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion.frm_pedidos.resources
 C:\Users\SENA\Desktop\App_restaurante_miguel\Presentacion\obj\Debug\Presentacion.frm_login.resources

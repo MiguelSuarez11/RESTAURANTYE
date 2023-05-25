@@ -23,5 +23,21 @@ namespace Presentacion
             f1.Show();
             this.Hide();
         }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            frm_pedidos pedidos = new frm_pedidos();
+            pedidos.Show();
+            this.Hide();
+        }
+
+        private void btn_clientes_Click(object sender, EventArgs e)
+        {
+            frm_clientes clientes = new frm_clientes();
+            clientes.Show();
+            this.Hide();
+        }
+
+     
     }
 }

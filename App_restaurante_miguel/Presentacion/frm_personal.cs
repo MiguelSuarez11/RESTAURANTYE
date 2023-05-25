@@ -228,9 +228,7 @@ namespace Presentacion
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            frm_administrador f1 = new frm_administrador();
-            f1.Show();
-            this.Hide();
+         
         }
 
         private void button3_Click(object sender, EventArgs e)

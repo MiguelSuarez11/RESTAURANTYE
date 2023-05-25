@@ -48,7 +48,26 @@ namespace Datos
                 objConecta.fnt_Desconectar();
             }
         }
+        public void fnt_Cargarpersonal()
+        {
+            string sql = " select PKUsuario ,Nombre , Descripcion from tbl_estado where PKCodigo >= 5 and PKCodigo <= 7";
+            cls_conexion objConecta = new cls_conexion();
+            objConecta.fnt_conectar();
 
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(sql, objConecta.conex);
+                dt = new DataTable();
+                MySqlDataAdapter Data = new MySqlDataAdapter(comando);
+                Data.Fill(dt);
+
+
+            }
+            catch (Exception)
+            {
+                objConecta.fnt_Desconectar();
+            }
+        }
 
         public void fnt_CargarEstado()
         {
