@@ -43,13 +43,17 @@
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.panelformularios = new System.Windows.Forms.Panel();
             this.panelcon = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.lbl_encargado = new System.Windows.Forms.Label();
             this.lbl_rol = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl__contraseña = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -276,6 +280,10 @@
             // panelcon
             // 
             this.panelcon.BackColor = System.Drawing.Color.White;
+            this.panelcon.Controls.Add(this.lbl__contraseña);
+            this.panelcon.Controls.Add(this.label6);
+            this.panelcon.Controls.Add(this.lbl_usuario);
+            this.panelcon.Controls.Add(this.label5);
             this.panelcon.Controls.Add(this.lbl_estado);
             this.panelcon.Controls.Add(this.lbl_encargado);
             this.panelcon.Controls.Add(this.lbl_rol);
@@ -288,6 +296,72 @@
             this.panelcon.Size = new System.Drawing.Size(692, 474);
             this.panelcon.TabIndex = 1;
             // 
+            // lbl_estado
+            // 
+            this.lbl_estado.AutoSize = true;
+            this.lbl_estado.BackColor = System.Drawing.Color.White;
+            this.lbl_estado.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_estado.Location = new System.Drawing.Point(550, 403);
+            this.lbl_estado.Name = "lbl_estado";
+            this.lbl_estado.Size = new System.Drawing.Size(62, 21);
+            this.lbl_estado.TabIndex = 59;
+            this.lbl_estado.Text = "Estado";
+            // 
+            // lbl_encargado
+            // 
+            this.lbl_encargado.AutoSize = true;
+            this.lbl_encargado.BackColor = System.Drawing.Color.White;
+            this.lbl_encargado.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_encargado.Location = new System.Drawing.Point(550, 355);
+            this.lbl_encargado.Name = "lbl_encargado";
+            this.lbl_encargado.Size = new System.Drawing.Size(90, 21);
+            this.lbl_encargado.TabIndex = 58;
+            this.lbl_encargado.Text = "Encargado";
+            // 
+            // lbl_rol
+            // 
+            this.lbl_rol.AutoSize = true;
+            this.lbl_rol.BackColor = System.Drawing.Color.White;
+            this.lbl_rol.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rol.Location = new System.Drawing.Point(551, 441);
+            this.lbl_rol.Name = "lbl_rol";
+            this.lbl_rol.Size = new System.Drawing.Size(37, 21);
+            this.lbl_rol.TabIndex = 57;
+            this.lbl_rol.Text = "Rol";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(506, 441);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 21);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Rol";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(476, 403);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 21);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Estado";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(441, 355);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 21);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Encargado";
+            // 
             // logo
             // 
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
@@ -299,71 +373,53 @@
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             // 
-            // lbl_estado
+            // lbl_usuario
             // 
-            this.lbl_estado.AutoSize = true;
-            this.lbl_estado.BackColor = System.Drawing.Color.White;
-            this.lbl_estado.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_estado.Location = new System.Drawing.Point(586, 403);
-            this.lbl_estado.Name = "lbl_estado";
-            this.lbl_estado.Size = new System.Drawing.Size(62, 21);
-            this.lbl_estado.TabIndex = 59;
-            this.lbl_estado.Text = "Estado";
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.BackColor = System.Drawing.Color.White;
+            this.lbl_usuario.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.Location = new System.Drawing.Point(599, 17);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(55, 14);
+            this.lbl_usuario.TabIndex = 63;
+            this.lbl_usuario.Text = "Encargado";
+            this.lbl_usuario.Visible = false;
             // 
-            // lbl_encargado
+            // label5
             // 
-            this.lbl_encargado.AutoSize = true;
-            this.lbl_encargado.BackColor = System.Drawing.Color.White;
-            this.lbl_encargado.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_encargado.Location = new System.Drawing.Point(586, 355);
-            this.lbl_encargado.Name = "lbl_encargado";
-            this.lbl_encargado.Size = new System.Drawing.Size(90, 21);
-            this.lbl_encargado.TabIndex = 58;
-            this.lbl_encargado.Text = "Encargado";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(490, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 14);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Encargado";
+            this.label5.Visible = false;
             // 
-            // lbl_rol
+            // lbl__contraseña
             // 
-            this.lbl_rol.AutoSize = true;
-            this.lbl_rol.BackColor = System.Drawing.Color.White;
-            this.lbl_rol.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rol.Location = new System.Drawing.Point(587, 441);
-            this.lbl_rol.Name = "lbl_rol";
-            this.lbl_rol.Size = new System.Drawing.Size(37, 21);
-            this.lbl_rol.TabIndex = 57;
-            this.lbl_rol.Text = "Rol";
+            this.lbl__contraseña.AutoSize = true;
+            this.lbl__contraseña.BackColor = System.Drawing.Color.White;
+            this.lbl__contraseña.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl__contraseña.Location = new System.Drawing.Point(599, 52);
+            this.lbl__contraseña.Name = "lbl__contraseña";
+            this.lbl__contraseña.Size = new System.Drawing.Size(55, 14);
+            this.lbl__contraseña.TabIndex = 65;
+            this.lbl__contraseña.Text = "Encargado";
+            this.lbl__contraseña.Visible = false;
             // 
-            // label3
+            // label6
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(542, 441);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 21);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "Rol";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(512, 403);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 21);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Estado";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(477, 355);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "Encargado";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(490, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 14);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Contraseña";
+            this.label6.Visible = false;
             // 
             // FormPrincipal
             // 
@@ -412,5 +468,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lbl_usuario;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label lbl__contraseña;
+        private System.Windows.Forms.Label label6;
     }
 }

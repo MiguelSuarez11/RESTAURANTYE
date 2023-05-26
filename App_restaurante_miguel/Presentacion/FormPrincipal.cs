@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -108,10 +109,38 @@ namespace Presentacion
             this.Hide();
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+
+        private void fnt_login(string user, string password)
         {
-           frm_pedidos pedidos = new frm_pedidos();
-            pedidos.Show();
+
+
+            cls_login obj_login = new cls_login(user, password);
+            if (obj_login.getRol() == "Administrador")
+            {
+                frm_pedidos obj_admin = new frm_pedidos();
+                this.Hide();
+                obj_admin.Visible = true;
+                obj_login.getNombre();
+                obj_admin.lbl_encargado.Text = obj_login.getNombre();
+                obj_admin.lbl_estado.Text = obj_login.getEstado();
+                obj_admin.lbl_rol.Text = obj_login.getRol();
+
+
+                Visible = false;
+            }
+
+
+        }
+
+
+
+
+
+            private void button3_Click_1(object sender, EventArgs e)
+        {
+            fnt_login(lbl_usuario.Text, lbl__contraseña.Text);
+          
+           
             this.Hide();
         }
 

@@ -341,6 +341,7 @@
             // 
             // cbx_Tipo
             // 
+            this.cbx_Tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Tipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_Tipo.FormattingEnabled = true;
             this.cbx_Tipo.Location = new System.Drawing.Point(159, 279);
@@ -350,6 +351,7 @@
             // 
             // cbx_estado
             // 
+            this.cbx_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_estado.FormattingEnabled = true;
             this.cbx_estado.Location = new System.Drawing.Point(159, 318);

@@ -154,6 +154,7 @@
             // 
             // cbx_rol
             // 
+            this.cbx_rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_rol.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_rol.FormattingEnabled = true;
             this.cbx_rol.Location = new System.Drawing.Point(350, 281);
@@ -163,6 +164,7 @@
             // 
             // cbx_estado
             // 
+            this.cbx_estado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_estado.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_estado.FormattingEnabled = true;
             this.cbx_estado.Location = new System.Drawing.Point(350, 244);

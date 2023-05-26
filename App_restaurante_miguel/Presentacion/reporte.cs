@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,59 @@ namespace Presentacion
         public reporte()
         {
             InitializeComponent();
+        }
+
+        private void reporte_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fnt_cargarDomicilios()
+        {
+            cls_domilicios objDt = new cls_domilicios();
+            objDt.fnt_CargarDomiciliario(txt_identificacion.Text);
+            cbx_asignados.ValueMember = "Id";
+            cbx_asignados.DisplayMember = "Pedido";
+            cbx_asignados.DataSource = objDt.getDt();
+        }
+
+
+        //private void fnt_consultar(string identificacion)
+
+        //{
+        //    cls_validar_personal obj_validar = new cls_validar_personal();
+        //    if (obj_validar.fnt_validar_personal(txt_identificacion.Text) == false)
+        //    {
+        //        MessageBox.Show("Esta persona no se encuentra registrado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        //    }
+        //    else
+        //    {
+        //        cls_domilicios obj_Consultar = new cls_domilicios();
+        //        obj_Consultar.fnt_Consultar2(identificacion);
+        //        cbx_asignados.Text = obj_Consultar.getNombre();
+               
+        //    }
+
+        //}
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cls_validar_personal obj_validar = new cls_validar_personal();
+            if (obj_validar.fnt_validar_personal(txt_identificacion.Text) == false)
+            {
+                MessageBox.Show("Esta persona no se encuentra registrada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (txt_identificacion.Text == "")
+            {
+
+                MessageBox.Show("Ingrese el criterio de busqueda");
+            }
+            else
+              
+            fnt_cargarDomicilios();
         }
     }
 }

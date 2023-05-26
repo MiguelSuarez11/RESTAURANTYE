@@ -27,7 +27,6 @@ namespace Datos
 
 
 
-
         public void fnt_CargarTipoPago()
         {
             string sql = "select PKCodigo,Nombre from  tbl_tipopago";
@@ -50,7 +49,7 @@ namespace Datos
         }
         public void fnt_Cargarpersonal()
         {
-            string sql = " select PKUsuario ,Nombre , Descripcion from tbl_estado where PKCodigo >= 5 and PKCodigo <= 7";
+            string sql = " select PKId ,Nombre  from tbl_personal ";
             cls_conexion objConecta = new cls_conexion();
             objConecta.fnt_conectar();
 
@@ -68,6 +67,41 @@ namespace Datos
                 objConecta.fnt_Desconectar();
             }
         }
+
+
+
+
+
+
+        /// ///////////////////////////////////
+        public void fnt_Cargarpersonales()
+        {
+            string sql = "select tbl_personal.Nombre as 'Dom', tbl_personal.PKId as 'ID' from tbl_personal,tbl_usuarios where tbl_personal.PKId = tbl_usuarios.FKId_tbl_personal and tbl_usuarios.FKCpodgo_tbl_rol = '3'";
+            cls_conexion objConecta = new cls_conexion();
+            objConecta.fnt_conectar();
+
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(sql, objConecta.conex);
+                dt = new DataTable();
+                MySqlDataAdapter Data = new MySqlDataAdapter(comando);
+                Data.Fill(dt);
+
+
+            }
+            catch (Exception)
+            {
+                objConecta.fnt_Desconectar();
+            }
+        }
+
+
+
+
+
+        
+        /// /////////////////////////////////
+        
 
         public void fnt_CargarEstado()
         {
@@ -105,11 +139,11 @@ namespace Datos
 
 
 
-        public void fnt_Registrar_Enc_Pedido(string id_cliente, double valor)
+        public void fnt_Registrar_Enc_Pedido(string id_cliente, double valor , string id_usuario , string id_domi)
         {
             obj_conexion.fnt_conectar();
-            String consulta = "insert into tbl_pedidos(FKId_tbl_clientes,Valor,Fecha , FKCodigo_tbl_estado) " +
-                "values ('" + id_cliente + "' ,'" + valor + "' ,  current_date() ,1 )";
+            String consulta = "insert into tbl_pedidos(FKId_tbl_clientes,Valor,Fecha , FKCodigo_tbl_estado , FKId_tbl_personal_tbl_usuarios_Crea , FKId_tbl_personal_DOM) " +
+                "values ('" + id_cliente + "' ,'" + valor + "' ,  current_date() ,1  , '" + id_usuario + "' , '" + id_domi + "' )";
             MySqlCommand comando = new MySqlCommand(consulta, obj_conexion.conex);
             MySqlDataReader lectura = comando.ExecuteReader();
             obj_conexion.fnt_Desconectar();

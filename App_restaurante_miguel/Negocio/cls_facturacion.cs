@@ -11,10 +11,10 @@ namespace Negocio
     {
         private int int_ultima;
 
-        public void fnt_Facturar(string id,  double valor)
+        public void fnt_Facturar(string id,  double valor , string id_usuario , string id_domi)
         {
             cls_funciones_pedidos obj_Factura = new cls_funciones_pedidos();
-            obj_Factura.fnt_Registrar_Enc_Pedido(id, valor);
+            obj_Factura.fnt_Registrar_Enc_Pedido(id, valor , id_usuario , id_domi);
             this.int_ultima = obj_Factura.getUltimoPedido();
         }
         public void fnt_det_pedido(int no_ped, double valor, int cant , int cod_ped)

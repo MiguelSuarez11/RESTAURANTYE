@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cls_conexion.cs" />
+    <Compile Include="cls_Domicilios.cs" />
     <Compile Include="cls_funciones_clientes.cs" />
     <Compile Include="cls_funciones_facturas.cs" />
     <Compile Include="cls_funciones_pedidos.cs" />

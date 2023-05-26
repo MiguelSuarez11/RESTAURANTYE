@@ -22,7 +22,10 @@ namespace Datos
                 cls_conexion obj_Conectar = new cls_conexion();
                 obj_Conectar.fnt_conectar();
                 string SQLbuscar;
-                SQLbuscar = "select tbl_personal.Nombre as NombrePersona , tbl_estado.Descripcion as Estado,tbl_rol.Nombre as Rol from tbl_personal , tbl_estado , tbl_rol , tbl_usuarios where tbl_estado.PKCodigo = tbl_usuarios.FKCodigo_tbl_estado and tbl_rol.PKCodigo = tbl_usuarios.FKCpodgo_tbl_rol and tbl_usuarios.PKUsuario = '"+usuario+"' and tbl_usuarios.Contraseña = '"+contraseña+"' and tbl_estado.PKCodigo = '1'";
+                SQLbuscar = "select tbl_personal.Nombre as NombrePersona , tbl_estado.Descripcion as Estado,tbl_rol.Nombre as Rol from tbl_personal ," +
+                " tbl_estado , tbl_rol , tbl_usuarios where tbl_estado.PKCodigo = tbl_usuarios.FKCodigo_tbl_estado and" +
+                " tbl_rol.PKCodigo = tbl_usuarios.FKCpodgo_tbl_rol and tbl_usuarios.PKUsuario = '"+usuario+ "' and tbl_usuarios.Contraseña = '"+contraseña+"' and" +
+                " tbl_estado.PKCodigo = '1' and tbl_personal.PKId = tbl_usuarios.PKUsuario";
                 MySqlCommand cmd = new MySqlCommand(SQLbuscar, obj_Conectar.conex);
                 cmd.CommandType = CommandType.Text;
                 MySqlDataReader lectura = cmd.ExecuteReader();

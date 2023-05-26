@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,18 +18,41 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+
+
+
+
+
+        private void fnt_login(string user, string password)
         {
-            frm_pedidos f1 = new frm_pedidos();
-            f1.Show();
-            this.Hide();
+
+
+            cls_login obj_login = new cls_login(user, password);
+            if (obj_login.getRol() == "Cajero")
+            {
+                frm_pedidos obj_admin = new frm_pedidos();
+                this.Hide();
+                obj_admin.Visible = true;
+                obj_login.getNombre();
+                obj_admin.lbl_encargado.Text = obj_login.getNombre();
+                obj_admin.lbl_estado.Text = obj_login.getEstado();
+                obj_admin.lbl_rol.Text = obj_login.getRol();
+
+
+                Visible = false;
+            }
+
+
         }
+
+
+
 
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
-            frm_pedidos pedidos = new frm_pedidos();
-            pedidos.Show();
+            fnt_login(lbl_usuario.Text, lbl__contraseña.Text);
             this.Hide();
+
         }
 
         private void btn_clientes_Click(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace Presentacion
             InitializeComponent();
             //fnt_CargarEstado();
             fnt_Cargartipopago();
-        
+            fnt_cargarPersonales();
 
     }
 
@@ -115,29 +115,9 @@ namespace Presentacion
                 }
             }
         }
-        private void fnt_login()
-        {
-          cls_traer rol = new cls_traer();
-            if (rol.getRol() == "Cajero")
-            {
-                frm_cajero obj_ventas = new frm_cajero();
-                this.Hide();
-            }
-            if (rol.getRol() == "Administrador")
-            {
-                frm_cajero obj_ventas = new frm_cajero();
-                this.Hide();
-            }
+       
 
-        }
-
-            private void pictureBox4_Click(object sender, EventArgs e)
-        {
-                fnt_login();     
-              
-               
-            
-        }
+       
 
         private void txt_valor_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -232,7 +212,14 @@ namespace Presentacion
         }
 
 
-
+        private void fnt_cargarPersonales() 
+        {
+            cls_cargar_domiciliarios objDt = new cls_cargar_domiciliarios();
+            objDt.fnt_CargarDomiciliario();
+            cbx_domi.ValueMember = "ID";
+            cbx_domi.DisplayMember = "Dom";
+            cbx_domi.DataSource = objDt.getDt();
+        }
 
 
 
@@ -275,8 +262,10 @@ namespace Presentacion
 
                     /////////////////////////// PEDIDO
                     obj_Facturar.fnt_Facturar(txt_identificacion.Text,
-                   Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value));
-                   ///////////// DETALLE DE PEDIDO
+                   Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value),
+                   lbl_encargado.Text,
+                   Convert.ToString(cbx_domi.SelectedValue));
+                    ///////////// DETALLE DE PEDIDO
                     obj_Facturar.fnt_det_pedido(
                         Convert.ToInt32(lbl_pedido.Text = Convert.ToString(obj_Facturar.getUltimoPedido())),
                          Convert.ToDouble(dgvLista.Rows[i].Cells[4].Value),
@@ -358,14 +347,17 @@ namespace Presentacion
             }
             else
             {
-
+                
 
 
                 cls_facturacion obj_Facturar = new cls_facturacion();
                 for (int i = 0; i < dgvLista.RowCount; i++)
                 {
                     obj_Facturar.fnt_Facturar(txt_identificacion.Text,
-                   Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value));
+                   Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value),
+                   lbl_encargado.Text,
+                   Convert.ToString(cbx_domi.SelectedValue));
+                    //DETALLE DE PEDIDO
                     obj_Facturar.fnt_det_pedido(
                         Convert.ToInt16(lbl_pedido.Text) + 1,
                          Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value),

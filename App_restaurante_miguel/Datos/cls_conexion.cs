@@ -12,7 +12,7 @@ namespace Datos
 
             conex = new MySqlConnection();
             //************* CONEXION LOCAL ******************
-            String servidor = "10.230.16.37";
+            String servidor = "10.230.16.193";
             String bd = "dbs_restaurante_miguel";
             String usuario = "yoyito";
             String contraseña = "Sena2023";

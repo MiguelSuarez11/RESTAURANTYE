@@ -52,6 +52,7 @@
     <Compile Include="cls_agregar_personal.cs" />
     <Compile Include="cls_agregar_personal2.cs" />
     <Compile Include="cls_agregar_platos.cs" />
+    <Compile Include="cls_cargar_domiciliarios.cs" />
     <Compile Include="cls_cargar_rol.cs" />
     <Compile Include="cls_cargar_tipopago.cs" />
     <Compile Include="cls_connsultar_plato.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="cls_consultar_pedido.cs" />
     <Compile Include="cls_consultar_personal.cs" />
     <Compile Include="cls_consultar_personal2.cs" />
+    <Compile Include="cls_domilicios.cs" />
     <Compile Include="cls_estado.cs" />
     <Compile Include="cls_facturacion.cs" />
     <Compile Include="cls_login.cs" />

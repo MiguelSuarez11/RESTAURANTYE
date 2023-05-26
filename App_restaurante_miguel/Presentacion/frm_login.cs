@@ -29,21 +29,27 @@ namespace Presentacion
                 if (obj_login.getRol() == "Administrador")
                 {
                     FormPrincipal obj_admin = new FormPrincipal();
-                    this.Hide();
+                     this.Hide();        
                     obj_admin.Visible = true;
                     obj_login.getNombre();
                     obj_admin.lbl_encargado.Text = obj_login.getNombre();
                     obj_admin.lbl_estado.Text = obj_login.getEstado();
                     obj_admin.lbl_rol.Text = obj_login.getRol();
-                    Visible = false;
+                    obj_admin.lbl_usuario.Text = txt_usuario.Text;
+                    obj_admin.lbl__contraseña.Text = txt_contraseña.Text;
+                   
+                Visible = false;
                 }
             if (obj_login.getRol() == "Cajero")
             {
                 frm_cajero obj_ventas = new frm_cajero();
+                
                 obj_ventas.Visible = true;
                 obj_ventas.lbl_encargado.Text = obj_login.getNombre();
                 obj_ventas.lbl_estado.Text = obj_login.getEstado();
                 obj_ventas.lbl_rol.Text = obj_login.getRol();
+                obj_ventas.lbl_usuario.Text= txt_usuario.Text;
+                obj_ventas.lbl__contraseña.Text = txt_contraseña.Text;
                 Visible = false;
             }
             //if (obj_login.getRol() == "Inventario")
