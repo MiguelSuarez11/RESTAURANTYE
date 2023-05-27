@@ -53,6 +53,7 @@
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
+            this.btn_Cerarr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -208,6 +209,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btn_Cerarr);
             this.panelMenu.Controls.Add(this.btn_registrar);
             this.panelMenu.Controls.Add(this.btn_actualizar);
             this.panelMenu.Controls.Add(this.btn_consultar);
@@ -351,6 +353,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnRestaurar
             // 
@@ -365,6 +368,19 @@
             this.btnRestaurar.TabIndex = 3;
             this.btnRestaurar.TabStop = false;
             this.btnRestaurar.Visible = false;
+            // 
+            // btn_Cerarr
+            // 
+            this.btn_Cerarr.BackColor = System.Drawing.Color.Red;
+            this.btn_Cerarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerarr.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_Cerarr.Location = new System.Drawing.Point(3, 343);
+            this.btn_Cerarr.Name = "btn_Cerarr";
+            this.btn_Cerarr.Size = new System.Drawing.Size(105, 28);
+            this.btn_Cerarr.TabIndex = 70;
+            this.btn_Cerarr.Text = "Cerrar sesión";
+            this.btn_Cerarr.UseVisualStyleBackColor = false;
+            this.btn_Cerarr.Click += new System.EventHandler(this.btn_Cerarr_Click);
             // 
             // frm_personal
             // 
@@ -428,5 +444,6 @@
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnRestaurar;
+        private System.Windows.Forms.Button btn_Cerarr;
     }
 }

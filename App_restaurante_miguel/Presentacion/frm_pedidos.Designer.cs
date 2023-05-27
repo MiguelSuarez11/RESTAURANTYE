@@ -69,6 +69,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_Cerarr = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_facturar = new System.Windows.Forms.Button();
@@ -89,6 +90,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.lbl__contraseña = new System.Windows.Forms.Label();
+            this.lbl_usuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -109,6 +112,7 @@
             this.txt_identificacion.Size = new System.Drawing.Size(174, 29);
             this.txt_identificacion.TabIndex = 45;
             this.txt_identificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_identificacion_KeyPress);
+            this.txt_identificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_identificacion_KeyUp);
             // 
             // lbl_identificacion
             // 
@@ -224,7 +228,7 @@
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(174, 29);
             this.txt_codigo.TabIndex = 47;
-            this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valor_KeyPress);
+            this.txt_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigo_KeyPress);
             this.txt_codigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // label5
@@ -296,6 +300,7 @@
             this.txt_Cantidad.Name = "txt_Cantidad";
             this.txt_Cantidad.Size = new System.Drawing.Size(171, 26);
             this.txt_Cantidad.TabIndex = 87;
+            this.txt_Cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cantidad_KeyPress);
             // 
             // label14
             // 
@@ -487,6 +492,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btn_Cerarr);
             this.panelMenu.Controls.Add(this.btn_nuevo);
             this.panelMenu.Controls.Add(this.btn_registrar);
             this.panelMenu.Controls.Add(this.btn_facturar);
@@ -496,6 +502,19 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(188, 590);
             this.panelMenu.TabIndex = 104;
+            // 
+            // btn_Cerarr
+            // 
+            this.btn_Cerarr.BackColor = System.Drawing.Color.Red;
+            this.btn_Cerarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerarr.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_Cerarr.Location = new System.Drawing.Point(0, 550);
+            this.btn_Cerarr.Name = "btn_Cerarr";
+            this.btn_Cerarr.Size = new System.Drawing.Size(105, 28);
+            this.btn_Cerarr.TabIndex = 69;
+            this.btn_Cerarr.Text = "Cerrar sesión";
+            this.btn_Cerarr.UseVisualStyleBackColor = false;
+            this.btn_Cerarr.Click += new System.EventHandler(this.btn_Cerarr_Click);
             // 
             // btn_nuevo
             // 
@@ -609,6 +628,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnRestaurar
             // 
@@ -754,12 +774,38 @@
             this.label20.TabIndex = 113;
             this.label20.Text = "Estado";
             // 
+            // lbl__contraseña
+            // 
+            this.lbl__contraseña.AutoSize = true;
+            this.lbl__contraseña.BackColor = System.Drawing.Color.White;
+            this.lbl__contraseña.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl__contraseña.Location = new System.Drawing.Point(961, 141);
+            this.lbl__contraseña.Name = "lbl__contraseña";
+            this.lbl__contraseña.Size = new System.Drawing.Size(55, 14);
+            this.lbl__contraseña.TabIndex = 116;
+            this.lbl__contraseña.Text = "Encargado";
+            this.lbl__contraseña.Visible = false;
+            // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.BackColor = System.Drawing.Color.White;
+            this.lbl_usuario.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.Location = new System.Drawing.Point(961, 106);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(55, 14);
+            this.lbl_usuario.TabIndex = 115;
+            this.lbl_usuario.Text = "Encargado";
+            this.lbl_usuario.Visible = false;
+            // 
             // frm_pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1067, 622);
+            this.Controls.Add(this.lbl__contraseña);
+            this.Controls.Add(this.lbl_usuario);
             this.Controls.Add(this.lbl_estado);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.lbl_encargado);
@@ -883,5 +929,8 @@
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.Label lbl_estado;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btn_Cerarr;
+        public System.Windows.Forms.Label lbl__contraseña;
+        public System.Windows.Forms.Label lbl_usuario;
     }
 }

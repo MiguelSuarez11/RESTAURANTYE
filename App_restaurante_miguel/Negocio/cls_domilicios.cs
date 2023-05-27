@@ -35,6 +35,11 @@ namespace Negocio
             this.dt = objDt.getDt();
         }
 
+        public void fnt_registrar_pedido()
+        {
+            cls_Domicilios obj_facturas = new cls_Domicilios();
+            obj_facturas.fnt_Registrar_pedido();
+        }
 
 
         public DataTable getDt() { return this.dt; }

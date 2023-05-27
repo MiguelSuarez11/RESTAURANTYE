@@ -143,7 +143,7 @@ namespace Datos
         {
             obj_conexion.fnt_conectar();
             String consulta = "insert into tbl_pedidos(FKId_tbl_clientes,Valor,Fecha , FKCodigo_tbl_estado , FKId_tbl_personal_tbl_usuarios_Crea , FKId_tbl_personal_DOM) " +
-                "values ('" + id_cliente + "' ,'" + valor + "' ,  current_date() ,1  , '" + id_usuario + "' , '" + id_domi + "' )";
+                "values ('" + id_cliente + "' ,'" + valor + "' ,  current_date() ,6  , '" + id_usuario + "' , '" + id_domi + "' )";
             MySqlCommand comando = new MySqlCommand(consulta, obj_conexion.conex);
             MySqlDataReader lectura = comando.ExecuteReader();
             obj_conexion.fnt_Desconectar();

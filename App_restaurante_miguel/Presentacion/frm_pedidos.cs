@@ -67,8 +67,16 @@ namespace Presentacion
             
             cls_consultar_cliente obj_Consultar = new cls_consultar_cliente();
           
-            {
-                obj_Consultar.fnt_Consultar(identificacion);
+            
+                cls_validar_clientes obj_validar = new cls_validar_clientes();
+                if (obj_validar.fnt_validar_clientes(txt_identificacion.Text) == false)
+                {
+                    MessageBox.Show("Este Clientes no se encuentra registrado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                {
+                    obj_Consultar.fnt_Consultar(identificacion);
                 txt_nombre.Text = obj_Consultar.getNombre();
                 txt_direccion.Text = obj_Consultar.getDireccion();
                 txt_contacto.Text = obj_Consultar.getContacto();
@@ -98,31 +106,17 @@ namespace Presentacion
         private void txt_identificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-           
-            if (e.KeyChar == Convert.ToChar(Keys.Enter) || (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back)))
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {
-             
-                fnt_consultar(txt_identificacion.Text);
-                txt_nombre.Visible = true;
-                txt_direccion.Visible = true;
-                txt_contacto.Visible = true;
+              
                 e.Handled = true;
                 return;
-               // if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-                {
-
-                  
-                }
             }
-        }
-       
 
-       
-
-        private void txt_valor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-         
         }
+
+
+
 
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -133,14 +127,16 @@ namespace Presentacion
             if (e.KeyCode == Keys.Enter)
             {
                 cls_connsultar_plato obj_Consultar = new cls_connsultar_plato();
+                cls_validar_platos obj_validar = new cls_validar_platos();
+                if (obj_validar.fnt_validar(txt_codigo.Text) == false)
+                {
+                    MessageBox.Show("Este Plato no se encuentra Registrado");
+                }
                 obj_Consultar.fnt_Consultar(txt_codigo.Text);
                 txt_nombre_plato.Text = obj_Consultar.getNombre();
                 txt_ingredientes.Text = obj_Consultar.getIngredientes();
                 txt_valorU.Text = obj_Consultar.getValor();
-                if (obj_Consultar.getMensaje() != "")
-                {
-                    MessageBox.Show("" + obj_Consultar.getMensaje(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
         }
 
@@ -359,10 +355,10 @@ namespace Presentacion
                    Convert.ToString(cbx_domi.SelectedValue));
                     //DETALLE DE PEDIDO
                     obj_Facturar.fnt_det_pedido(
-                        Convert.ToInt16(lbl_pedido.Text) + 1,
+                        Convert.ToInt32(lbl_pedido.Text) + 1,
                          Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value),
-                          Convert.ToInt16(dgvLista.Rows[i].Cells[4].Value),
-                         Convert.ToInt16(dgvLista.Rows[i].Cells[0].Value));
+                          Convert.ToInt32(dgvLista.Rows[i].Cells[4].Value),
+                         Convert.ToInt32(dgvLista.Rows[i].Cells[0].Value));
                     lbl_pedido.Text = Convert.ToString(obj_Facturar.getUltimoPedido());
 
                     MessageBox.Show("Pedido registrado con exito", "PEDIDO EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -423,6 +419,99 @@ namespace Presentacion
 
         }
 
-        
+
+        private void fnt_login(string user, string password)
+        {
+
+
+            cls_login obj_login = new cls_login(user, password);
+            if (obj_login.getRol() == "Administrador")
+            {
+                FormPrincipal obj_admin = new FormPrincipal();
+                this.Hide();
+                obj_admin.Visible = true;
+                obj_login.getNombre();
+                obj_admin.lbl_encargado.Text = obj_login.getNombre();
+                obj_admin.lbl_estado.Text = obj_login.getEstado();
+                obj_admin.lbl_rol.Text = obj_login.getRol();
+                obj_admin.lbl_usuario.Text = lbl_usuario.Text;
+                obj_admin.lbl__contraseña.Text = lbl__contraseña.Text;
+
+                Visible = false;
+            }
+
+            if (obj_login.getRol() == "Cajero")
+            {
+                frm_cajero obj_admin = new frm_cajero();
+                this.Hide();
+                obj_admin.Visible = true;
+                obj_login.getNombre();
+                obj_admin.lbl_encargado.Text = obj_login.getNombre();
+                obj_admin.lbl_estado.Text = obj_login.getEstado();
+                obj_admin.lbl_rol.Text = obj_login.getRol();
+                obj_admin.lbl_usuario.Text = lbl_usuario.Text;
+                obj_admin.lbl__contraseña.Text = lbl__contraseña.Text;
+
+                Visible = false;
+            }
+
+        }
+            private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            fnt_login(lbl_usuario.Text, lbl__contraseña.Text);
+            
+        }
+
+        private void btn_Cerarr_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            frm_login obj_Login = new frm_login();
+            obj_Login.Visible = true;
+        }
+
+        private void txt_codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                
+                e.Handled = true;
+                return;
+            }
+
+        }
+
+        private void txt_identificacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                fnt_consultar(txt_identificacion.Text);
+                txt_nombre.Visible = true;
+                txt_direccion.Visible = true;
+                txt_contacto.Visible = true;
+                e.Handled = true;
+                return;
+                // if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+                {
+
+
+                }
+
+            }
+
+
+
+           
+
+        }
+
+        private void txt_Cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

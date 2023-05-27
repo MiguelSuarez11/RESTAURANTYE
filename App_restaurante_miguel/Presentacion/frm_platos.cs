@@ -40,45 +40,7 @@ namespace Presentacion
             cbx_Tipo.DataSource = objDt.getDt();
         }
 
-        private void btn_Guardar_Click(object sender, System.EventArgs e)
-        {
-           
-            MemoryStream ms = new MemoryStream();
-            if (txt_Codigo.Text == "" || txt_Nombre.Text == "" || txt_Ingredientes.Text == "" || txt_Valor.Text == "")
-            {
-                MessageBox.Show ( "Debe ingresar toda la unformacion requerida");
-            }
-
-            else
-
-          if (ptb_foto.Image == null)
-            {
-                MessageBox.Show("Debe agregar una imagen de referencia");
-            }
-            else{
-                cls_validar_platos obj_validar = new cls_validar_platos();
-                if (obj_validar.fnt_validar(txt_Codigo.Text) == true)
-                {
-                    MessageBox.Show("Este Plato ya se encuentra Registrado");
-                }
-                else
-
-                    ptb_foto.Image.Save(ms, ImageFormat.Jpeg);
-                byte[] aByte = ms.ToArray();
-                
-                cls_agregar_platos objAgregarCandidato = new cls_agregar_platos(
-                    txt_Codigo.Text,
-                    txt_Nombre.Text,
-                    txt_Ingredientes.Text,
-                    txt_Valor.Text,
-                    cbx_Tipo.SelectedIndex + 1,
-                    cbx_estado.SelectedIndex + 1, aByte);
-                MessageBox.Show("Este Plato se ha  Registrado con exito");
-
-                MessageBox.Show("" + objAgregarCandidato.getMsn());
-                fnt_Nuevo();
-            }
-        }
+    
         private void fnt_Nuevo()
         { 
             txt_Codigo.Clear();
@@ -87,7 +49,7 @@ namespace Presentacion
             txt_Valor.Clear();
             txt_Codigo.Focus();
             txt_Codigo.Enabled = true;
-            //ptb_foto.Image = Image.FromFile(ruta_directorio_Raiz + "\\camarero.png");
+            ptb_foto.Image = Image.FromFile(ruta_directorio_Raiz + "\\plato.png");
         }
         private void btn_nuevo_Click(object sender, System.EventArgs e)
         {
@@ -248,7 +210,7 @@ namespace Presentacion
                     cbx_estado.SelectedIndex + 1, aByte);
                 MessageBox.Show("Este Plato se ha  Registrado con exito");
 
-                MessageBox.Show("" + objAgregarCandidato.getMsn());
+              
                 fnt_Nuevo();
             }
         }
@@ -284,6 +246,13 @@ namespace Presentacion
             FormPrincipal f1 = new FormPrincipal();
             f1.Show();
             this.Hide();
+        }
+
+        private void btn_Cerarr_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            frm_login obj_Login = new frm_login();
+            obj_Login.Visible = true;
         }
     }
 }

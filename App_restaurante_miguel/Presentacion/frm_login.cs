@@ -37,7 +37,7 @@ namespace Presentacion
                     obj_admin.lbl_rol.Text = obj_login.getRol();
                     obj_admin.lbl_usuario.Text = txt_usuario.Text;
                     obj_admin.lbl__contraseña.Text = txt_contraseña.Text;
-                   
+                this.Hide();
                 Visible = false;
                 }
             if (obj_login.getRol() == "Cajero")

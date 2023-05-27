@@ -54,6 +54,7 @@
             this.cbx_estado = new System.Windows.Forms.ComboBox();
             this.ptb_foto = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Cerarr = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -67,6 +68,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btn_Cerarr);
             this.panelMenu.Controls.Add(this.btn_nuevo);
             this.panelMenu.Controls.Add(this.btn_registrar);
             this.panelMenu.Controls.Add(this.btn_actualizar);
@@ -361,6 +363,7 @@
             // 
             // ptb_foto
             // 
+            this.ptb_foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ptb_foto.Location = new System.Drawing.Point(489, 71);
             this.ptb_foto.Name = "ptb_foto";
             this.ptb_foto.Size = new System.Drawing.Size(123, 144);
@@ -390,6 +393,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(642, 491);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_Cerarr
+            // 
+            this.btn_Cerarr.BackColor = System.Drawing.Color.Red;
+            this.btn_Cerarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerarr.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_Cerarr.Location = new System.Drawing.Point(3, 515);
+            this.btn_Cerarr.Name = "btn_Cerarr";
+            this.btn_Cerarr.Size = new System.Drawing.Size(105, 28);
+            this.btn_Cerarr.TabIndex = 71;
+            this.btn_Cerarr.Text = "Cerrar sesión";
+            this.btn_Cerarr.UseVisualStyleBackColor = false;
+            this.btn_Cerarr.Click += new System.EventHandler(this.btn_Cerarr_Click);
             // 
             // frm_platos
             // 
@@ -442,6 +458,7 @@
         private System.Windows.Forms.ComboBox cbx_estado;
         private System.Windows.Forms.PictureBox ptb_foto;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_Cerarr;
     }
 }
 

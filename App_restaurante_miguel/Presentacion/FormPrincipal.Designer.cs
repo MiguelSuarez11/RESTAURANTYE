@@ -43,6 +43,10 @@
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.panelformularios = new System.Windows.Forms.Panel();
             this.panelcon = new System.Windows.Forms.Panel();
+            this.lbl__contraseña = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.lbl_encargado = new System.Windows.Forms.Label();
             this.lbl_rol = new System.Windows.Forms.Label();
@@ -50,10 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.lbl_usuario = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl__contraseña = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btn_Cerarr = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -82,6 +83,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btn_Cerarr);
             this.panelMenu.Controls.Add(this.button5);
             this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.button3);
@@ -296,6 +298,54 @@
             this.panelcon.Size = new System.Drawing.Size(692, 474);
             this.panelcon.TabIndex = 1;
             // 
+            // lbl__contraseña
+            // 
+            this.lbl__contraseña.AutoSize = true;
+            this.lbl__contraseña.BackColor = System.Drawing.Color.White;
+            this.lbl__contraseña.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl__contraseña.Location = new System.Drawing.Point(599, 52);
+            this.lbl__contraseña.Name = "lbl__contraseña";
+            this.lbl__contraseña.Size = new System.Drawing.Size(55, 14);
+            this.lbl__contraseña.TabIndex = 65;
+            this.lbl__contraseña.Text = "Encargado";
+            this.lbl__contraseña.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(490, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 14);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Contraseña";
+            this.label6.Visible = false;
+            // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.BackColor = System.Drawing.Color.White;
+            this.lbl_usuario.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.Location = new System.Drawing.Point(599, 17);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(55, 14);
+            this.lbl_usuario.TabIndex = 63;
+            this.lbl_usuario.Text = "Encargado";
+            this.lbl_usuario.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(490, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 14);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Encargado";
+            this.label5.Visible = false;
+            // 
             // lbl_estado
             // 
             this.lbl_estado.AutoSize = true;
@@ -373,53 +423,18 @@
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             // 
-            // lbl_usuario
+            // btn_Cerarr
             // 
-            this.lbl_usuario.AutoSize = true;
-            this.lbl_usuario.BackColor = System.Drawing.Color.White;
-            this.lbl_usuario.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuario.Location = new System.Drawing.Point(599, 17);
-            this.lbl_usuario.Name = "lbl_usuario";
-            this.lbl_usuario.Size = new System.Drawing.Size(55, 14);
-            this.lbl_usuario.TabIndex = 63;
-            this.lbl_usuario.Text = "Encargado";
-            this.lbl_usuario.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(490, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 14);
-            this.label5.TabIndex = 62;
-            this.label5.Text = "Encargado";
-            this.label5.Visible = false;
-            // 
-            // lbl__contraseña
-            // 
-            this.lbl__contraseña.AutoSize = true;
-            this.lbl__contraseña.BackColor = System.Drawing.Color.White;
-            this.lbl__contraseña.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl__contraseña.Location = new System.Drawing.Point(599, 52);
-            this.lbl__contraseña.Name = "lbl__contraseña";
-            this.lbl__contraseña.Size = new System.Drawing.Size(55, 14);
-            this.lbl__contraseña.TabIndex = 65;
-            this.lbl__contraseña.Text = "Encargado";
-            this.lbl__contraseña.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(490, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 14);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Contraseña";
-            this.label6.Visible = false;
+            this.btn_Cerarr.BackColor = System.Drawing.Color.Red;
+            this.btn_Cerarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerarr.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_Cerarr.Location = new System.Drawing.Point(-2, 463);
+            this.btn_Cerarr.Name = "btn_Cerarr";
+            this.btn_Cerarr.Size = new System.Drawing.Size(105, 28);
+            this.btn_Cerarr.TabIndex = 66;
+            this.btn_Cerarr.Text = "Cerrar sesión";
+            this.btn_Cerarr.UseVisualStyleBackColor = false;
+            this.btn_Cerarr.Click += new System.EventHandler(this.btn_Cerarr_Click);
             // 
             // FormPrincipal
             // 
@@ -472,5 +487,6 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label lbl__contraseña;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_Cerarr;
     }
 }

@@ -19,6 +19,7 @@ namespace Datos
         private DataTable dt;
 
 
+        cls_conexion obj_conexion = new cls_conexion();
 
 
         public void fnt_Cargardomi(string id)
@@ -43,6 +44,48 @@ namespace Datos
         }
 
 
+
+        public void fnt_Registrar_pedido()
+        {
+            obj_conexion.fnt_conectar();
+            String consulta = "insert into tbl_pedidos( FKCodigo_tbl_estado ) " +
+                "values ('6' )";
+            MySqlCommand comando = new MySqlCommand(consulta, obj_conexion.conex);
+            MySqlDataReader lectura = comando.ExecuteReader();
+            obj_conexion.fnt_Desconectar();
+          
+        }
+
+        public void fnt_Actualizar(
+        string codigo, string nombre, string ingredientes, string valor, int tipo, int estado)
+        {
+            cls_conexion obj_conexion = new cls_conexion();
+            obj_conexion.fnt_conectar();
+            string comando = "update tbl_platos set Nombre=@Nombre, ingredientes=@ingredientes, valor=@valor, " +
+            "FKCodigo_tbl_tipo=@FKCodigo_tbl_tipo,FKCodigo_tbl_estado=@FKCodigo_tbl_estado where PKCodigo=@PKCodigo";
+            MySqlCommand cmd = new MySqlCommand(comando, obj_conexion.conex);
+            cmd.Parameters.AddWithValue("@PKCodigo", codigo);
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
+            cmd.Parameters.AddWithValue("@ingredientes", ingredientes);
+            cmd.Parameters.AddWithValue("@valor", valor);
+            cmd.Parameters.AddWithValue("@FKCodigo_tbl_tipo", tipo);
+            cmd.Parameters.AddWithValue("@FKCodigo_tbl_estado", estado);
+            cmd.ExecuteNonQuery();
+            obj_conexion.fnt_Desconectar();
+        }
+
+
+        public void fnt_guardarseleccion(string id , int pedido)
+        {
+            cls_conexion obj_conexion = new cls_conexion();
+            obj_conexion.fnt_conectar();
+            string comando = "update tbl_pedidos set FKId_tbl_personal_DOM=@FKId_tbl_personal_DOM ,  FKCodigo_tbl_estado=@FKCodigo_tbl_estado where FKId_tbl_personal_DOM=@FKId_tbl_personal_DOM";
+            MySqlCommand cmd = new MySqlCommand(comando, obj_conexion.conex);
+            cmd.Parameters.AddWithValue("@FKId_tbl_personal_DOM", id);
+            cmd.Parameters.AddWithValue("@FKCodigo_tbl_estado", pedido);
+            cmd.ExecuteNonQuery();
+            obj_conexion.fnt_Desconectar();
+        }
 
 
 

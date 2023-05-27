@@ -40,15 +40,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.btn_consultar = new System.Windows.Forms.Button();
-            this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
+            this.btn_Cerarr = new System.Windows.Forms.Button();
+            this.lbl__contraseña = new System.Windows.Forms.Label();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.lbl_estado = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lbl_encargado = new System.Windows.Forms.Label();
+            this.lbl_rol = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -61,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Gainsboro;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(328, 143);
             this.label2.Name = "label2";
@@ -82,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Gainsboro;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(288, 108);
             this.label1.Name = "label1";
@@ -113,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(320, 178);
             this.label3.Name = "label3";
@@ -134,7 +143,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Gainsboro;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(317, 213);
             this.label4.Name = "label4";
@@ -168,6 +177,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btn_Cerarr);
             this.panelMenu.Controls.Add(this.btn_registrar);
             this.panelMenu.Controls.Add(this.btn_actualizar);
             this.panelMenu.Controls.Add(this.btn_consultar);
@@ -178,6 +188,26 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(188, 418);
             this.panelMenu.TabIndex = 52;
+            // 
+            // btn_registrar
+            // 
+            this.btn_registrar.FlatAppearance.BorderSize = 0;
+            this.btn_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.btn_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.btn_registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registrar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_registrar.Image = global::Presentacion.Properties.Resources.cliente;
+            this.btn_registrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_registrar.Location = new System.Drawing.Point(2, 143);
+            this.btn_registrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_registrar.Name = "btn_registrar";
+            this.btn_registrar.Size = new System.Drawing.Size(188, 40);
+            this.btn_registrar.TabIndex = 1;
+            this.btn_registrar.Text = "Registrar";
+            this.btn_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_registrar.UseVisualStyleBackColor = true;
+            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
             // btn_actualizar
             // 
@@ -218,26 +248,6 @@
             this.btn_consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_consultar.UseVisualStyleBackColor = true;
             this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click_1);
-            // 
-            // btn_registrar
-            // 
-            this.btn_registrar.FlatAppearance.BorderSize = 0;
-            this.btn_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.btn_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.btn_registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_registrar.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_registrar.Image = global::Presentacion.Properties.Resources.cliente;
-            this.btn_registrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_registrar.Location = new System.Drawing.Point(2, 143);
-            this.btn_registrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_registrar.Name = "btn_registrar";
-            this.btn_registrar.Size = new System.Drawing.Size(188, 40);
-            this.btn_registrar.TabIndex = 1;
-            this.btn_registrar.Text = "Registrar";
-            this.btn_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_registrar.UseVisualStyleBackColor = true;
-            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
             // btn_nuevo
             // 
@@ -311,6 +321,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnRestaurar
             // 
@@ -326,12 +337,123 @@
             this.btnRestaurar.TabStop = false;
             this.btnRestaurar.Visible = false;
             // 
+            // btn_Cerarr
+            // 
+            this.btn_Cerarr.BackColor = System.Drawing.Color.Red;
+            this.btn_Cerarr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerarr.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_Cerarr.Location = new System.Drawing.Point(0, 390);
+            this.btn_Cerarr.Name = "btn_Cerarr";
+            this.btn_Cerarr.Size = new System.Drawing.Size(105, 28);
+            this.btn_Cerarr.TabIndex = 68;
+            this.btn_Cerarr.Text = "Cerrar sesión";
+            this.btn_Cerarr.UseVisualStyleBackColor = false;
+            this.btn_Cerarr.Click += new System.EventHandler(this.btn_Cerarr_Click);
+            // 
+            // lbl__contraseña
+            // 
+            this.lbl__contraseña.AutoSize = true;
+            this.lbl__contraseña.BackColor = System.Drawing.Color.White;
+            this.lbl__contraseña.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl__contraseña.Location = new System.Drawing.Point(757, 91);
+            this.lbl__contraseña.Name = "lbl__contraseña";
+            this.lbl__contraseña.Size = new System.Drawing.Size(55, 14);
+            this.lbl__contraseña.TabIndex = 124;
+            this.lbl__contraseña.Text = "Encargado";
+            this.lbl__contraseña.Visible = false;
+            // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.BackColor = System.Drawing.Color.White;
+            this.lbl_usuario.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.Location = new System.Drawing.Point(757, 56);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(55, 14);
+            this.lbl_usuario.TabIndex = 123;
+            this.lbl_usuario.Text = "Encargado";
+            this.lbl_usuario.Visible = false;
+            // 
+            // lbl_estado
+            // 
+            this.lbl_estado.AutoSize = true;
+            this.lbl_estado.BackColor = System.Drawing.Color.White;
+            this.lbl_estado.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_estado.Location = new System.Drawing.Point(738, 422);
+            this.lbl_estado.Name = "lbl_estado";
+            this.lbl_estado.Size = new System.Drawing.Size(51, 19);
+            this.lbl_estado.TabIndex = 122;
+            this.lbl_estado.Text = "Estado";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.White;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(664, 422);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 19);
+            this.label20.TabIndex = 121;
+            this.label20.Text = "Estado";
+            // 
+            // lbl_encargado
+            // 
+            this.lbl_encargado.AutoSize = true;
+            this.lbl_encargado.BackColor = System.Drawing.Color.White;
+            this.lbl_encargado.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_encargado.Location = new System.Drawing.Point(738, 360);
+            this.lbl_encargado.Name = "lbl_encargado";
+            this.lbl_encargado.Size = new System.Drawing.Size(74, 19);
+            this.lbl_encargado.TabIndex = 120;
+            this.lbl_encargado.Text = "Encargado";
+            // 
+            // lbl_rol
+            // 
+            this.lbl_rol.AutoSize = true;
+            this.lbl_rol.BackColor = System.Drawing.Color.White;
+            this.lbl_rol.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_rol.Location = new System.Drawing.Point(738, 393);
+            this.lbl_rol.Name = "lbl_rol";
+            this.lbl_rol.Size = new System.Drawing.Size(30, 19);
+            this.lbl_rol.TabIndex = 119;
+            this.lbl_rol.Text = "Rol";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(693, 393);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(30, 19);
+            this.label18.TabIndex = 118;
+            this.label18.Text = "Rol";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(629, 360);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(74, 19);
+            this.label19.TabIndex = 117;
+            this.label19.Text = "Encargado";
+            // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(838, 450);
+            this.Controls.Add(this.lbl__contraseña);
+            this.Controls.Add(this.lbl_usuario);
+            this.Controls.Add(this.lbl_estado);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.lbl_encargado);
+            this.Controls.Add(this.lbl_rol);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.pictureBox4);
@@ -380,5 +502,14 @@
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnRestaurar;
+        private System.Windows.Forms.Button btn_Cerarr;
+        public System.Windows.Forms.Label lbl__contraseña;
+        public System.Windows.Forms.Label lbl_usuario;
+        public System.Windows.Forms.Label lbl_estado;
+        private System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label lbl_encargado;
+        public System.Windows.Forms.Label lbl_rol;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }

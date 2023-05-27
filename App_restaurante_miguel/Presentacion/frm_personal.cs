@@ -323,6 +323,18 @@ namespace Presentacion
             fnt_nuevo();
 
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Cerarr_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            frm_login obj_Login = new frm_login();
+            obj_Login.Visible = true;
+        }
     }
 }
     

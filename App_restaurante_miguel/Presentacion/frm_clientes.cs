@@ -197,7 +197,7 @@ namespace Presentacion
                   txt_Nombre.Text,
                   txt_contacto.Text,
                   txt_direccion.Text);
-                MessageBox.Show("" + objAgregarClientes.getMsn());
+                MessageBox.Show("Cliente registrado con exito");
                 fnt_nuevo();
 
             }
@@ -232,6 +232,58 @@ namespace Presentacion
              txt_direccion.Text);
             MessageBox.Show("" + objActulizarClientes.getMsn());
             fnt_nuevo();
+        }
+
+
+        private void fnt_login(string user, string password)
+        {
+
+
+            cls_login obj_login = new cls_login(user, password);
+            if (obj_login.getRol() == "Administrador")
+            {
+                FormPrincipal obj_admin = new FormPrincipal();
+                this.Hide();
+                obj_admin.Visible = true;
+                obj_login.getNombre();
+                obj_admin.lbl_encargado.Text = obj_login.getNombre();
+                obj_admin.lbl_estado.Text = obj_login.getEstado();
+                obj_admin.lbl_rol.Text = obj_login.getRol();
+                obj_admin.lbl_usuario.Text = lbl_usuario.Text;
+                obj_admin.lbl__contraseña.Text = lbl__contraseña.Text;
+
+                Visible = false;
+            }
+
+            if (obj_login.getRol() == "Cajero")
+            {
+                frm_cajero obj_admin = new frm_cajero();
+                this.Hide();
+                obj_admin.Visible = true;
+                obj_login.getNombre();
+                obj_admin.lbl_encargado.Text = obj_login.getNombre();
+                obj_admin.lbl_estado.Text = obj_login.getEstado();
+                obj_admin.lbl_rol.Text = obj_login.getRol();
+                obj_admin.lbl_usuario.Text = lbl_usuario.Text;
+                obj_admin.lbl__contraseña.Text = lbl__contraseña.Text;
+
+                Visible = false;
+            }
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            fnt_login(lbl_usuario.Text, lbl__contraseña.Text);
+
+
+        }
+
+        private void btn_Cerarr_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            frm_login obj_Login = new frm_login();
+            obj_Login.Visible = true;
         }
     }
     }

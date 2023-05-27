@@ -53,7 +53,7 @@ namespace Negocio
 
         }
 
-        public string getMsn() { return str_msn; }
+        
 
 
 

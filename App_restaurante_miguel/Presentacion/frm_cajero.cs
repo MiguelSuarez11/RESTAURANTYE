@@ -37,8 +37,9 @@ namespace Presentacion
                 obj_admin.lbl_encargado.Text = obj_login.getNombre();
                 obj_admin.lbl_estado.Text = obj_login.getEstado();
                 obj_admin.lbl_rol.Text = obj_login.getRol();
-
-
+                obj_admin.lbl_usuario.Text = lbl_usuario.Text;
+                obj_admin.lbl__contraseña.Text = lbl__contraseña.Text;
+                this.Hide();
                 Visible = false;
             }
 
@@ -55,13 +56,50 @@ namespace Presentacion
 
         }
 
+
+        private void fnt_pasar(string user, string password)
+        {
+
+
+            cls_login obj_login = new cls_login(user, password);
+            if (obj_login.getRol() == "Cajero")
+            {
+                frm_clientes obj_admin = new frm_clientes();
+                this.Hide();
+                obj_admin.Visible = true;
+                obj_login.getNombre();
+                obj_admin.lbl_encargado.Text = obj_login.getNombre();
+                obj_admin.lbl_estado.Text = obj_login.getEstado();
+                obj_admin.lbl_rol.Text = obj_login.getRol();
+                obj_admin.lbl_usuario.Text = lbl_usuario.Text;
+                obj_admin.lbl__contraseña.Text = lbl__contraseña.Text;
+                this.Hide();
+                Visible = false;
+            }
+
+
+        }
+
+
         private void btn_clientes_Click(object sender, EventArgs e)
         {
-            frm_clientes clientes = new frm_clientes();
-            clientes.Show();
+            fnt_pasar(lbl_usuario.Text, lbl__contraseña.Text);
             this.Hide();
         }
 
-     
+        private void btn_Cerarr_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            frm_login obj_Login = new frm_login();
+            obj_Login.Visible = true;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            frm_login obj_Login = new frm_login();
+            obj_Login.Visible = true;
+            this.Hide();
+        }
     }
 }

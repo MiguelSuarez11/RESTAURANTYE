@@ -28,7 +28,7 @@ namespace Presentacion
             cls_domilicios objDt = new cls_domilicios();
             objDt.fnt_CargarDomiciliario(txt_identificacion.Text);
             cbx_asignados.ValueMember = "Id";
-            cbx_asignados.DisplayMember = "Pedido";
+            cbx_asignados.DisplayMember = "Pedido asignado";
             cbx_asignados.DataSource = objDt.getDt();
         }
 
@@ -55,20 +55,36 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cls_validar_personal obj_validar = new cls_validar_personal();
-            if (obj_validar.fnt_validar_personal(txt_identificacion.Text) == false)
-            {
-                MessageBox.Show("Esta persona no se encuentra registrada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+           
+        }
 
-            if (txt_identificacion.Text == "")
+        private void txt_identificacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
 
-                MessageBox.Show("Ingrese el criterio de busqueda");
+                cls_validar_personal obj_validar = new cls_validar_personal();
+                if (obj_validar.fnt_validar_personal(txt_identificacion.Text) == false)
+                {
+                    MessageBox.Show("Esta persona no se encuentra registrada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                if (txt_identificacion.Text == "")
+                {
+
+                    MessageBox.Show("Ingrese el criterio de busqueda");
+                }
+                else
+
+                    fnt_cargarDomicilios();
             }
-            else
-              
-            fnt_cargarDomicilios();
+        }
+
+        private void btn_seleccionar_Click(object sender, EventArgs e)
+        {
+            cls_domilicios domilicios = new cls_domilicios();
+            domilicios.fnt_registrar_pedido();
+            MessageBox.Show("Pedido seleccionado con exito", "PEDIDO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
