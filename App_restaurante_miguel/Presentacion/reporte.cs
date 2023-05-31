@@ -27,8 +27,8 @@ namespace Presentacion
         {
             cls_domilicios objDt = new cls_domilicios();
             objDt.fnt_CargarDomiciliario(txt_identificacion.Text);
-            cbx_asignados.ValueMember = "Id";
-            cbx_asignados.DisplayMember = "Pedido asignado";
+            cbx_asignados.ValueMember = "Pedido";
+            cbx_asignados.DisplayMember = "Pedido";
             cbx_asignados.DataSource = objDt.getDt();
         }
 
@@ -82,9 +82,17 @@ namespace Presentacion
 
         private void btn_seleccionar_Click(object sender, EventArgs e)
         {
-            cls_domilicios domilicios = new cls_domilicios();
-            domilicios.fnt_registrar_pedido();
-            MessageBox.Show("Pedido seleccionado con exito", "PEDIDO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            cls_seleccionar_dom domicilios = new cls_seleccionar_dom
+                (
+                 txt_identificacion.Text,
+                 Convert.ToInt16(cbx_asignados.SelectedValue));
+            MessageBox.Show("" + domicilios.getMsn());
+
         }
     }
 }

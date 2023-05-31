@@ -103,6 +103,66 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap comida_a_domicilio {
+            get {
+                object obj = ResourceManager.GetObject("comida-a-domicilio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap comida_a_domicilio__1_ {
+            get {
+                object obj = ResourceManager.GetObject("comida-a-domicilio (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap comida_a_domicilio__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("comida-a-domicilio (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap comida_a_domicilio__2_ {
+            get {
+                object obj = ResourceManager.GetObject("comida-a-domicilio (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap comida_a_domicilio__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("comida-a-domicilio (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap entrega_a_domicilio {
+            get {
+                object obj = ResourceManager.GetObject("entrega-a-domicilio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap facturas_de_dinero {
             get {
                 object obj = ResourceManager.GetObject("facturas-de-dinero", resourceCulture);
@@ -153,9 +213,39 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pedido_en_linea1 {
+            get {
+                object obj = ResourceManager.GetObject("pedido-en-linea1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap telefono_inteligente {
+            get {
+                object obj = ResourceManager.GetObject("telefono-inteligente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trabajo_en_equipo {
             get {
                 object obj = ResourceManager.GetObject("trabajo-en-equipo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trabajo_en_equipo1 {
+            get {
+                object obj = ResourceManager.GetObject("trabajo-en-equipo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

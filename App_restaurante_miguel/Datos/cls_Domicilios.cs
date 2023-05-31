@@ -17,6 +17,7 @@ namespace Datos
         private string str_nombre;
 
         private DataTable dt;
+        private string str_msn;
 
 
         cls_conexion obj_conexion = new cls_conexion();
@@ -24,7 +25,7 @@ namespace Datos
 
         public void fnt_Cargardomi(string id)
         {
-            string sql = "select tbl_pedidos.FKId_tbl_personal_DOM as 'Id' , tbl_pedidos.PKN_pedido as 'Pedido asignado' from tbl_pedidos \r\nwhere\r\ntbl_pedidos.FKId_tbl_personal_DOM = '"+id+"' and\r\ntbl_pedidos.PKN_pedido";
+            string sql = "select tbl_pedidos.PKN_pedido as 'Pedido' from tbl_pedidos \r\nwhere\r\ntbl_pedidos.FKId_tbl_personal_DOM = '"+id+"'";
             cls_conexion objConecta = new cls_conexion();
             objConecta.fnt_conectar();
 
@@ -45,47 +46,22 @@ namespace Datos
 
 
 
-        public void fnt_Registrar_pedido()
-        {
-            obj_conexion.fnt_conectar();
-            String consulta = "insert into tbl_pedidos( FKCodigo_tbl_estado ) " +
-                "values ('6' )";
-            MySqlCommand comando = new MySqlCommand(consulta, obj_conexion.conex);
-            MySqlDataReader lectura = comando.ExecuteReader();
-            obj_conexion.fnt_Desconectar();
-          
-        }
+      
 
-        public void fnt_Actualizar(
-        string codigo, string nombre, string ingredientes, string valor, int tipo, int estado)
+        public void fnt_Actualizar( string id_dom ,int pedido )
         {
             cls_conexion obj_conexion = new cls_conexion();
             obj_conexion.fnt_conectar();
-            string comando = "update tbl_platos set Nombre=@Nombre, ingredientes=@ingredientes, valor=@valor, " +
-            "FKCodigo_tbl_tipo=@FKCodigo_tbl_tipo,FKCodigo_tbl_estado=@FKCodigo_tbl_estado where PKCodigo=@PKCodigo";
+            string comando = "update tbl_pedidos set FKCodigo_tbl_estado= '7'  where FKId_tbl_personal_DOM= '"+id_dom +"' and PKN_pedido = '"+pedido+"'";
             MySqlCommand cmd = new MySqlCommand(comando, obj_conexion.conex);
-            cmd.Parameters.AddWithValue("@PKCodigo", codigo);
-            cmd.Parameters.AddWithValue("@Nombre", nombre);
-            cmd.Parameters.AddWithValue("@ingredientes", ingredientes);
-            cmd.Parameters.AddWithValue("@valor", valor);
-            cmd.Parameters.AddWithValue("@FKCodigo_tbl_tipo", tipo);
-            cmd.Parameters.AddWithValue("@FKCodigo_tbl_estado", estado);
+            
             cmd.ExecuteNonQuery();
             obj_conexion.fnt_Desconectar();
         }
 
+    
 
-        public void fnt_guardarseleccion(string id , int pedido)
-        {
-            cls_conexion obj_conexion = new cls_conexion();
-            obj_conexion.fnt_conectar();
-            string comando = "update tbl_pedidos set FKId_tbl_personal_DOM=@FKId_tbl_personal_DOM ,  FKCodigo_tbl_estado=@FKCodigo_tbl_estado where FKId_tbl_personal_DOM=@FKId_tbl_personal_DOM";
-            MySqlCommand cmd = new MySqlCommand(comando, obj_conexion.conex);
-            cmd.Parameters.AddWithValue("@FKId_tbl_personal_DOM", id);
-            cmd.Parameters.AddWithValue("@FKCodigo_tbl_estado", pedido);
-            cmd.ExecuteNonQuery();
-            obj_conexion.fnt_Desconectar();
-        }
+
 
 
 
@@ -112,6 +88,7 @@ namespace Datos
             }
             obj_Conectar.fnt_Desconectar();
         }
+        public string getMsn() { return str_msn; }
         public string getNombre() { return this.str_nombre; }
         public DataTable getDt() { return dt; }
 

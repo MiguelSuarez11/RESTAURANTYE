@@ -65,7 +65,7 @@
     <Compile Include="cls_estado.cs" />
     <Compile Include="cls_facturacion.cs" />
     <Compile Include="cls_login.cs" />
-    <Compile Include="cls_seleccionar_domicilio.cs" />
+    <Compile Include="cls_seleccionar_dom.cs" />
     <Compile Include="cls_tipo.cs" />
     <Compile Include="cls_traer.cs" />
     <Compile Include="cls_validar_clientes.cs" />
