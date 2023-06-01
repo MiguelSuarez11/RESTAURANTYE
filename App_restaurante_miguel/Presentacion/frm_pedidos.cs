@@ -58,6 +58,9 @@ namespace Presentacion
             txt_Cantidad.Clear();
             this.dgvLista.DataSource = null;
             this.dgvLista.Rows.Clear();
+            lbl_Subtotal.ResetText();
+            lbl_Total.ResetText();
+            lbl_Iva.ResetText();
         }
 
         private void fnt_consultar(string identificacion)
@@ -327,97 +330,17 @@ namespace Presentacion
             Ticket1.ImprimirTiket(impresora);
 
             MessageBox.Show("Gracias por preferirnos");
-
+            fnt_nuevo();
           
         }
 
        
 
-        private void btn_registrar_Click_1(object sender, EventArgs e)
-        {
+    
 
-            if (txt_identificacion.Text == "" || txt_nombre.Text == "" || txt_direccion.Text == "")
-            {
-                MessageBox.Show("Debe ingresar los valores requeridos", "ERROR",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                
+      
 
-
-                cls_facturacion obj_Facturar = new cls_facturacion();
-                for (int i = 0; i < dgvLista.RowCount; i++)
-                {
-                    obj_Facturar.fnt_Facturar(txt_identificacion.Text,
-                   Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value),
-                   lbl_encargado.Text,
-                   Convert.ToString(cbx_domi.SelectedValue));
-                    //DETALLE DE PEDIDO
-                    obj_Facturar.fnt_det_pedido(
-                        Convert.ToInt32(lbl_pedido.Text) + 1,
-                         Convert.ToDouble(dgvLista.Rows[i].Cells[3].Value),
-                          Convert.ToInt32(dgvLista.Rows[i].Cells[4].Value),
-                         Convert.ToInt32(dgvLista.Rows[i].Cells[0].Value));
-                    lbl_pedido.Text = Convert.ToString(obj_Facturar.getUltimoPedido());
-
-                    MessageBox.Show("Pedido registrado con exito", "PEDIDO EXITOSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
-
-        private void btn_nuevo_Click_1(object sender, EventArgs e)
-        {
-            fnt_nuevo();
-        }
-
-        private void btn_facturar_Click(object sender, EventArgs e)
-        {
-            clsFunciones.CreaTicket Ticket1 = new clsFunciones.CreaTicket();
-
-            Ticket1.TextoCentro("Restaurante el punto del sabor "); //imprime una linea de descripcion
-            Ticket1.TextoCentro("**********************************");
-
-            Ticket1.TextoIzquierda("");
-            Ticket1.TextoCentro("Factura de Venta"); //imprime una linea de descripcion
-            Ticket1.TextoIzquierda("No Fac: 0120102");
-            Ticket1.TextoIzquierda("Fecha:" + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
-            Ticket1.TextoIzquierda("Le Atendio: xxxx");
-            Ticket1.TextoIzquierda("");
-            clsFunciones.CreaTicket.LineasGuion();
-
-            clsFunciones.CreaTicket.EncabezadoVenta();
-            clsFunciones.CreaTicket.LineasGuion();
-            foreach (DataGridViewRow r in dgvLista.Rows)
-            {
-                // PROD                                            //PrECIO                                    CANT                                   TOTAL
-                Ticket1.AgregaArticulo(r.Cells[1].Value.ToString(), double.Parse(r.Cells[2].Value.ToString()), int.Parse(r.Cells[3].Value.ToString()), double.Parse(r.Cells[4].Value.ToString())); //imprime una linea de descripcion
-            }
-
-
-            clsFunciones.CreaTicket.LineasGuion();
-            Ticket1.TextoIzquierda(" ");
-            Ticket1.AgregaTotales("Total", double.Parse(lbl_Total.Text)); // imprime linea con total
-            Ticket1.TextoIzquierda(" ");
-            Ticket1.AgregaTotales("Iva:", double.Parse(lbl_Iva.Text));
-            Ticket1.AgregaTotales("Subtotal", double.Parse(lbl_Subtotal.Text));
-
-
-            // Ticket1.LineasTotales(); // imprime linea 
-
-            Ticket1.TextoIzquierda(" ");
-            Ticket1.TextoCentro("**********************************");
-            Ticket1.TextoCentro("*     Gracias por preferirnos    *");
-
-            Ticket1.TextoCentro("**********************************");
-            Ticket1.TextoIzquierda(" ");
-            string impresora = "Microsoft XPS Document Writer";
-            Ticket1.ImprimirTiket(impresora);
-
-            MessageBox.Show("Gracias por preferirnos");
-
-
-        }
+      
 
 
         private void fnt_login(string user, string password)

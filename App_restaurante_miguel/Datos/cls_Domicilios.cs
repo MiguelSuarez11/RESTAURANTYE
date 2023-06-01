@@ -25,7 +25,7 @@ namespace Datos
 
         public void fnt_Cargardomi(string id)
         {
-            string sql = "select tbl_pedidos.PKN_pedido as 'Pedido' from tbl_pedidos \r\nwhere\r\ntbl_pedidos.FKId_tbl_personal_DOM = '"+id+"'";
+            string sql = "select tbl_pedidos.PKN_pedido as 'Pedido' from tbl_pedidos where tbl_pedidos.FKId_tbl_personal_DOM = '"+id+ "' and  tbl_pedidos.FKCodigo_tbl_estado = '5'";
             cls_conexion objConecta = new cls_conexion();
             objConecta.fnt_conectar();
 
@@ -52,14 +52,24 @@ namespace Datos
         {
             cls_conexion obj_conexion = new cls_conexion();
             obj_conexion.fnt_conectar();
-            string comando = "update tbl_pedidos set FKCodigo_tbl_estado= '7'  where FKId_tbl_personal_DOM= '"+id_dom +"' and PKN_pedido = '"+pedido+"'";
+            string comando = "update tbl_pedidos set FKCodigo_tbl_estado= '6'  where FKId_tbl_personal_DOM= '"+id_dom +"' and PKN_pedido = '"+pedido+"'";
             MySqlCommand cmd = new MySqlCommand(comando, obj_conexion.conex);
             
             cmd.ExecuteNonQuery();
             obj_conexion.fnt_Desconectar();
         }
 
-    
+        public void fnt_entregado(string id_dom, int pedido)
+        {
+            cls_conexion obj_conexion = new cls_conexion();
+            obj_conexion.fnt_conectar();
+            string comando = "update tbl_pedidos set FKCodigo_tbl_estado= '7'  where FKId_tbl_personal_DOM= '" + id_dom + "' and PKN_pedido = '" + pedido + "'";
+            MySqlCommand cmd = new MySqlCommand(comando, obj_conexion.conex);
+
+            cmd.ExecuteNonQuery();
+            obj_conexion.fnt_Desconectar();
+        }
+
 
 
 

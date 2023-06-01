@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentacion
 {
@@ -16,6 +17,7 @@ namespace Presentacion
         public reporte()
         {
             InitializeComponent();
+            fnt_limpiar();
         }
 
         private void reporte_Load(object sender, EventArgs e)
@@ -79,6 +81,13 @@ namespace Presentacion
                     fnt_cargarDomicilios();
             }
         }
+        private void fnt_limpiar() 
+        {
+            cbx_asignados.DataSource = null;
+            cbx_asignados.Items.Clear();
+            txt_identificacion.Clear();
+            txt_identificacion.Focus();
+        }
 
         private void btn_seleccionar_Click(object sender, EventArgs e)
         {
@@ -86,13 +95,24 @@ namespace Presentacion
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            cls_domicilio_entregado domicilios = new cls_domicilio_entregado
+               (
+                txt_identificacion.Text,
+                Convert.ToInt16(cbx_asignados.SelectedValue));
+            MessageBox.Show("" + domicilios.getMsn());
+            fnt_limpiar();
 
+
+        }
+
+        private void btn_seleccionar_Click_1(object sender, EventArgs e)
+        {
             cls_seleccionar_dom domicilios = new cls_seleccionar_dom
                 (
                  txt_identificacion.Text,
                  Convert.ToInt16(cbx_asignados.SelectedValue));
             MessageBox.Show("" + domicilios.getMsn());
-
+            fnt_limpiar();
         }
     }
 }

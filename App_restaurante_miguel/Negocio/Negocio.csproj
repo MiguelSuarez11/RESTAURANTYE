@@ -61,6 +61,7 @@
     <Compile Include="cls_consultar_pedido.cs" />
     <Compile Include="cls_consultar_personal.cs" />
     <Compile Include="cls_consultar_personal2.cs" />
+    <Compile Include="cls_domicilio_entregado.cs" />
     <Compile Include="cls_domilicios.cs" />
     <Compile Include="cls_estado.cs" />
     <Compile Include="cls_facturacion.cs" />

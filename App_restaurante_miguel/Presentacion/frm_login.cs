@@ -52,18 +52,16 @@ namespace Presentacion
                 obj_ventas.lbl__contraseña.Text = txt_contraseña.Text;
                 Visible = false;
             }
-            //if (obj_login.getRol() == "Inventario")
+            if (obj_login.getRol() == "Domiciliario")
             {
-                //frm_Inventario obj_inventario = new frm_Inventario();
-                //obj_inventario.Visible = true;
-                //obj_inventario.lbl_Encargado.Text = obj_Login.getNombre();
-                //obj_inventario.lbl_Estado.Text = obj_Login.getEstado();
-              //  obj_inventario.lbl_Rol.Text = obj_Login.getRol();
+                reporte obj_inventario = new reporte();
+                obj_inventario.Visible = true;
+                obj_inventario.lbl_encargado.Text = obj_login.getNombre();
+                obj_inventario.lbl_estado.Text = obj_login.getEstado();
+                obj_inventario.lbl_rol.Text = obj_login.getRol();
                 Visible = false;
             }
-            //lbl_Mensaje.ForeColor = Color.Red;
-            //lbl_Mensaje.Text = obj_Login.getMsn();
-            //lbl_Mensaje.Visible = true;
+           
             lbl_mensaje.Text = obj_login.getMsn();
             
 
