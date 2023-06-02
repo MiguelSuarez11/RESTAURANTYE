@@ -206,7 +206,7 @@ namespace Negocio
                         }
 
                         
-                        elementos1 += espacios + cant.ToString() + "\n"; // Cantidad
+                        elementos1 += cant.ToString() + "\n"; // Cantidad
                       
                         // colocamos el precio a la derecha
                         nroEspacios = (10 - precio.ToString().Length);
@@ -217,7 +217,7 @@ namespace Negocio
                             espacios += " ";
                         }
                         
-                        elementos2 += espacios + precio.ToString() + "\n";//Precio unitario
+                        elementos2 +=  precio.ToString() + "\n";//Precio unitario
 
                         //colocar el subtotal a la dercha
                         nroEspacios = (11 - subtotal.ToString().Length);
@@ -228,7 +228,7 @@ namespace Negocio
                             espacios += " ";
                         }
                        
-                        elementos3 += espacios + subtotal.ToString() + "\n";// Valor
+                        elementos3 += subtotal.ToString() + "\n";// Valor
                         
                         line.AppendLine(elementos );
                         string LineEncavesado1 = "Cantidad";   // agrega lineas de  encabezados

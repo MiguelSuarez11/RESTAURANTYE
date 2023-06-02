@@ -15,6 +15,7 @@ using System.Drawing.Printing;
 using static System.Net.WebRequestMethods;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.CodeDom;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
@@ -302,7 +303,7 @@ namespace Presentacion
             clsFunciones.CreaTicket.LineasGuion();
 
             clsFunciones.CreaTicket.EncabezadoVenta();
-            clsFunciones.CreaTicket.LineasGuion();
+           
             foreach (DataGridViewRow r in dgvLista.Rows)
             {
                 // PROD                                            //PrECIO                                    CANT                                   TOTAL
@@ -435,6 +436,27 @@ namespace Presentacion
                 e.Handled = true;
                 return;
             }
+        }
+
+        //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

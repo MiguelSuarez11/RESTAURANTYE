@@ -39,7 +39,7 @@ namespace Datos
 
                 else
                 {
-                    this.str_msn = "credencial de acceso no valido";
+                    this.str_msn = "credencial de acceso no validas";
                 }
                 obj_Conectar.fnt_Desconectar();
             }

@@ -172,21 +172,7 @@ namespace Presentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnRestaurar_Click_1(object sender, EventArgs e)
-        {
-            btnMaximizar.Visible = true;
-            btnRestaurar.Visible = false;
-            this.Size = new Size(sw, sh);
-            this.Location = new Point(lx, ly);
-        }
-
-        private void btnMaximizar_Click_1(object sender, EventArgs e)
-        {
-            btnMaximizar.Visible = true;
-            btnRestaurar.Visible = false;
-            this.Size = new Size(sw, sh);
-            this.Location = new Point(lx, ly);
-        }
+      
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -212,6 +198,12 @@ namespace Presentacion
             Visible = false;
             frm_login obj_Login = new frm_login();
             obj_Login.Visible = true;
+        }
+
+        private void panelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
 

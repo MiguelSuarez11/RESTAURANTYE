@@ -7,6 +7,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace Presentacion
         public frm_login()
         {
             InitializeComponent();
+            lbl_mensaje.Visible = false;
         }
 
 
@@ -55,13 +57,14 @@ namespace Presentacion
             if (obj_login.getRol() == "Domiciliario")
             {
                 reporte obj_inventario = new reporte();
+                obj_inventario.lbl_domi.Text = txt_usuario.Text;
                 obj_inventario.Visible = true;
                 obj_inventario.lbl_encargado.Text = obj_login.getNombre();
                 obj_inventario.lbl_estado.Text = obj_login.getEstado();
                 obj_inventario.lbl_rol.Text = obj_login.getRol();
                 Visible = false;
             }
-           
+            lbl_mensaje.Visible = true;
             lbl_mensaje.Text = obj_login.getMsn();
             
 
@@ -81,5 +84,31 @@ namespace Presentacion
         {
 
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
-    }
+}

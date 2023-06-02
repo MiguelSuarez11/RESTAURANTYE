@@ -25,7 +25,8 @@ namespace Datos
 
         public void fnt_Cargardomi(string id)
         {
-            string sql = "select tbl_pedidos.PKN_pedido as 'Pedido' from tbl_pedidos where tbl_pedidos.FKId_tbl_personal_DOM = '"+id+ "' and  tbl_pedidos.FKCodigo_tbl_estado = '5'";
+            string sql = "select tbl_pedidos.PKN_pedido as 'No.Pedido' , tbl_clientes.Nombre as 'Nombre' from tbl_pedidos , tbl_clientes where tbl_pedidos.FKId_tbl_personal_DOM = '"+id+"' and  tbl_pedidos.FKCodigo_tbl_estado = '5' and\r\ntbl_clientes.PKId = tbl_pedidos.FKId_tbl_clientes";
+           
             cls_conexion objConecta = new cls_conexion();
             objConecta.fnt_conectar();
 

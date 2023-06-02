@@ -35,18 +35,7 @@ namespace Negocio
 
         }
 
-        public cls_login()
-        {
-          
-                Datos.cls_login obj_login = new Datos.cls_login();
-                this.str_estado = obj_login.getEstado();
-                this.str_nombre = obj_login.getNombre();
-                this.str_rol = obj_login.getRol();
-                this.str_msn = obj_login.getMsn();
-            }
-
-
-
+    
         
         public string getNombre() { return str_nombre; }
         public string getEstado() { return str_estado; }
